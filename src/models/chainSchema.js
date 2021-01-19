@@ -1,6 +1,6 @@
 import { model, Schema } from 'mongoose';
 
-export default model('ChainData', chainDataSchema) = new Schema({
+ const chainSchema = new Schema({
     regionArray: [
         {
             regionId: Number,
@@ -29,4 +29,6 @@ export default model('ChainData', chainDataSchema) = new Schema({
         }
     ]
 })
+
+export default model('ChainData', chainSchema)
 

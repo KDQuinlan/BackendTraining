@@ -1,12 +1,13 @@
 const dotenv = require('dotenv')
 dotenv.config();
 
-const express = require('express')
-const mongoose = require('mongoose');
-import chainData from './schemas'
+import express from 'express'
+import mongoose from 'mongoose'
+
+import ChainData from './models/chainSchema'
 
 const app = express()
-const port = 3000
+const port = 4000
 
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(
@@ -18,8 +19,9 @@ app.get('/', (req, res) => {
 })
 
 app.get('/chainCollection', async (req, res) => {
+    let chainData
     try {
-        const chainData = await chainData.find()
+        chainData = await ChainData.find({})
     } catch (e) {
         console.log(e)
     }
