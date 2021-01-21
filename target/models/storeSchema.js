@@ -7,14 +7,7 @@ exports["default"] = void 0;
 
 var _mongoose = require("mongoose");
 
-var chainSchema = new _mongoose.Schema({
-  regionArray: [{
-    regionId: Number,
-    regionName: String,
-    today: Number,
-    lastYear: Number,
-    lastYearDay: Number
-  }],
+var storeSchema = new _mongoose.Schema({
   areaArray: [{
     id: Number,
     name: String,
@@ -30,9 +23,9 @@ var chainSchema = new _mongoose.Schema({
     }]
   }]
 }, {
-  collection: 'chainCollection'
+  collection: 'storeCollection'
 });
 
-var _default = (0, _mongoose.model)('ChainData', chainSchema);
+var _default = (0, _mongoose.model)('StoreData', storeSchema);
 
 exports["default"] = _default;

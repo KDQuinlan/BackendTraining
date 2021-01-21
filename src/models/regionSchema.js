@@ -1,10 +1,10 @@
 import { model, Schema } from 'mongoose';
 
-const chainSchema = new Schema({
-    regionArray: [
+const regionSchema = new Schema({
+    storeArray: [
         {
-            regionId: Number,
-            regionName: String,
+            storeId: Number,
+            storeName: String,
             today: Number,
             lastYear: Number,
             lastYearDay: Number
@@ -28,7 +28,6 @@ const chainSchema = new Schema({
             ]
         }
     ]
-}, { collection: 'chainCollection' })
+}, { collection: 'regionCollection' })
 
-export default model('ChainData', chainSchema)
-
+export default model('RegionData', regionSchema)
