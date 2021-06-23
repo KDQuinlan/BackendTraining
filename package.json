@@ -19,15 +19,23 @@
   },
   "homepage": "https://github.com/KLongbottom/BackendTraining#readme",
   "dependencies": {
-    "dotenv": "^8.2.0",
+    "Babel": "^0.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.6.0",
     "express": "^4.17.1",
-    "mongoose": "^5.11.12"
+    "express-mongo-sanitize": "^2.1.0",
+    "express-rate-limit": "^5.2.6",
+    "git": "^0.1.5",
+    "helmet": "^4.6.0",
+    "mongoose": "^5.11.12",
+    "nodemailer": "^6.6.2",
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "@babel/node": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/node": "^7.14.7",
+    "@babel/preset-env": "^7.14.7",
     "nodemon": "^2.0.7"
   }
 }
