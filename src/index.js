@@ -1,14 +1,27 @@
-const dotenv = require('dotenv')
-dotenv.config();
-
 import express from 'express';
 import mongoose from 'mongoose';
+import helmet from 'helmet';
+import mongoSanitize from 'express-mongo-sanitize';
+import rateLimit from 'express-rate-limit';
+import cors from 'cors';
 
 import ChainData from './models/chainSchema';
 import RegionData from './models/regionSchema';
 import StoreData from './models/storeSchema';
 
+const dotenv = require('dotenv')
+dotenv.config();
+
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, 
+    max: 100 
+  });
+
 const app = express()
+app.use(helmet())
+app.use(cors())
+app.use(mongoSanitize())
+app.use(limiter)
 const port = 4000
 
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true })
